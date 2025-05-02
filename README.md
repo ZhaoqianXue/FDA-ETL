@@ -1,6 +1,9 @@
-# Drug Adverse Events Dashboard
+# Interactive Knowledge Graph for Semaglutide & Tirzepatide Adverse Events: An Automated FDA Data Pipeline
 
-This project provides an interactive web application to browse, filter, and export adverse event data for specific drugs from the OpenFDA API.
+This report details the conception, development, and deployment of a comprehensive platform designed to automatically extract, process, analyze, and visualize adverse event (AE) data specifically associated with the GLP-1 receptor agonists Semaglutide and Tirzepatide (marketed under brand names like Ozempic, Wegovy, Mounjaro, Zepbound, etc.). Addressing the critical need for targeted safety signal detection amidst the rising popularity of these weight-loss medications, I engineered an end-to-end solution. The core challenge was isolating AEs reported *solely* in connection with either Semaglutide or Tirzepatide within individual FDA safety reports, filtering out confounding data from co-reported medications. This was achieved through a robust, automated Extract, Transform, Load (ETL) pipeline built with Python, leveraging the OpenFDA API and employing Pydantic for rigorous data validation before loading into an SQLite database. The ETL process is designed for idempotency and scheduled for daily execution, ensuring data freshness. Complementing the data pipeline, I developed a Flask-based backend API providing cached, filtered, and paginated access to the curated AE data, along with endpoints for metadata (medications, AE terms) and CSV export functionality. The user-facing component is a dynamic React frontend featuring interactive filters (drug, AE, date range), a configurable Top N% AE display, and crucially, a D3.js-powered knowledge graph visualizing the relationships between the drugs and their reported adverse events. The entire system is deployed on PythonAnywhere, configured for automated daily data updates and reliable access. This project delivers a powerful tool for proactive pharmacovigilance, enabling near real-time monitoring and deeper understanding of the safety profiles of these specific, high-profile medications.
+
+- Website: [https://zx136.pythonanywhere.com/](https://zx136.pythonanywhere.com/)
+- GitHub: [https://zx136.pythonanywhere.com/](https://zx136.pythonanywhere.com/)
 
 ## Components
 
