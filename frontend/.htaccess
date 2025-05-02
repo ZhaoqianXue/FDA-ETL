@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# API requests go to the Flask application
+RewriteRule ^api/(.*)$ /drug-dashboard/$1 [P,L]
+ 
+# All other requests serve the React app
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L] 
